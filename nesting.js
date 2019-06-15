@@ -51,7 +51,16 @@ var employees = [
 */
 
 //Code Here
-
+function employeeUpdater (){
+  for(var i=0; i<employees.length; i++){
+  if (employees[i].firstName === 'Theo'){
+    delete employees[i]
+  } else {if (employees[i].firstName === 'Lorie'){
+    employees[i].department = 'HR'
+  }}
+}
+return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -68,8 +77,29 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+// Code Here
+// function removeDuplicates(arr){
+//   for(i=0; i < arr.length; i++){
+//     for (k =0; k < arr.length; i++){
+//       if (arr[i] === arr[k]){
+//         delete arr[i];
+//       }
+//     }
+//   }
+//   return arr
+// }
 
+function removeDuplicates(arr) {
+  let cleanArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (cleanArray.indexOf(arr[i]) === -1) {
+      cleanArray.push(arr[i]);
+    }
+  }
+
+  return cleanArray;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +127,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -160,3 +190,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 //Code Here
 
 
+function looper(arr) {
+
+  let newArr = arr;
+
+  let theReassigner = function(array) {
+    let newArr = [];
+    for (let i = 0; i < array.length; i++) {
+      if (typeof array[i] === 'number') {
+        array[i] = (array[i] % 2 === 0) ? 'even' : 'odd';
+      } else {
+        theReassigner(array[i]);
+      }
+    }
+  };
+  theReassigner(newArr);
+  return newArr;
+}

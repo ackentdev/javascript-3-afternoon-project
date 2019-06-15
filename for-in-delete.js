@@ -21,6 +21,7 @@
 
 // for(var key in values) {
 //   console.log(values[key])
+//   console.log(values.one)
 // }
 
 /*
@@ -39,8 +40,14 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
+function showValues(obj) {
+  let newString = '';
+
+  for (var key in obj){
+    newString += obj[key];
+  }
+
+  return newString;
 }
 
 
@@ -54,7 +61,17 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function greaterThan10(obj){
+  let noTens = {}
+  for(var key in obj){
+    if (obj[key]>10){
+      noTens[key] = 0;
+    } else {
+      noTens[key] = obj[key];
+    }
+  }
+  return noTens;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +83,13 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function double(obj) {
+  let doubleMania = {};
+  for (var key in obj) {
+    doubleMania[key] = obj[key] * 2; 
+  }
+  return doubleMania;
+}
 
 
 ////////// PROBLEM 4 //////////

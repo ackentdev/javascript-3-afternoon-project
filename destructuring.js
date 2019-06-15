@@ -92,8 +92,8 @@ function ingredients(obj){
 */
 
 //Code Here
-function largeNumbers({first, second, third}){
-  
+function largeNumbers({first, second, third}) {
+  return Math.min(first, second, third);
 }
 
 
@@ -106,5 +106,23 @@ function largeNumbers({first, second, third}){
 */
 
 //Code Here
+function numberGroups({a, b, c}) {
+  let longest = Math.max(a.length, b.length, c.length);
+  // if (a.length === longest) {
+  //   return a;
+  // } else if (b.length === longest) {
+  //   return b;
+  // } else {
+  //   return c;
+  // }
 
+  switch (true) {
+    case a.length === longest:
+      return a;
+    case b.length === longest:
+      return b;
+    default:
+      return c;
+  }
+}
 
